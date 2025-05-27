@@ -5,6 +5,8 @@ import 'package:wallet_app/themes/color_theme.dart';
 import 'package:wallet_app/themes/text_theme.dart';
 import 'package:wallet_app/widgets/banking_card.dart';
 import 'package:wallet_app/screens/skills_screen.dart';  // Nueva importación
+import 'package:provider/provider.dart';
+import 'package:wallet_app/services/auth_service.dart';
 
 class WalletScreen extends StatelessWidget {
   const WalletScreen({super.key});
@@ -226,6 +228,32 @@ class WalletScreen extends StatelessWidget {
                   Column(
                     children:
                         myBankingCard.map((e) => BankingCard(bank: e)).toList(),
+                  ),
+                  const SizedBox(height: 32),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        final authService = Provider.of<AuthService>(context, listen: false);
+                        await authService.signOut();
+                        // No necesitamos navegar manualmente, el Wrapper se encargará de eso
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: MyColorTheme.medievalRed,
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: const Text(
+                        "Cerrar sesión",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

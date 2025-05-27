@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "555532300794",
+    "project_id": "fae-wallet",
+    "storage_bucket": "fae-wallet.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555532300794:android:88893a6cbd586e8e54b443",
+        "android_client_info": {
+          "package_name": "com.example.wallet_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9osTrv2W8eqzzOnHOqEqc7NmkC6pcs6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
